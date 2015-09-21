@@ -21,6 +21,16 @@ end
 #function for removing dashes from the isbn number 
 def remove_dashes_from_isbn(isbn_number)
   if isbn_number.include?"-"
-	isbn_number.delete!"-"
+	 isbn_number.delete!"-"
   end
   end
+
+#function for removing spaces from isbn number
+def remove_spaces_from_isbn
+  if isbn_number.include?" "
+     isbn_number.delete!" " 
+	 end
+	 end
+	 
+  
+  
