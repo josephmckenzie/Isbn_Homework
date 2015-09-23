@@ -3,7 +3,7 @@ no_spaces_isbn = remove_spaces_from_isbn(isbn_number)
 no_dashes_isbn = remove_dashes_from_isbn(no_spaces_isbn)
 if verify_length(no_dashes_isbn) == true 
 	isbn_array=isbn_number_array(isbn_number)
-	check_digit_is_valid(isbn_array)
+	check_digit_10_is_valid(isbn_array)
 else 
 	false
 end
@@ -47,16 +47,16 @@ def isbn_number_array(isbn_number)
 def check_digit_contains_X(isbn)
 isbn_number = isbn.split ""
 
-	if isbn_number[9] == "x" || isbn_number[9] == "X"
+	if isbn_number[9] == "x" or isbn_number[9] == "X"
 	isbn_number[9] = 10
 	end
 	
 isbn_number[9] == 10
-check_digit_is_valid(isbn_number)
+check_digit_10_is_valid(isbn_number)
 end
 
 	
-def check_digit_is_valid(isbn)
+def check_digit_10_is_valid(isbn)
 array =[]
 
 	isbn.each do |value|

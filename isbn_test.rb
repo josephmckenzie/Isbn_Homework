@@ -24,10 +24,10 @@ def test_for_string_coversion
 	assert_equal(["3","4","5","7","6","5","5","6","7"],isbn_number_array("345765567"))
 	end
 
-def test_for_check_digit
-	assert_equal(true, check_digit_is_valid(["0","3","0","6","4","0","6","1","5","2"]))
-	assert_equal(false, check_digit_is_valid([1,2,4,6,7,8,9,0,9,9]))
-	assert_equal(true, check_digit_is_valid([0,3,2,1,1,4,6,5,3,0]))
+def test_for_check_digit_10
+	assert_equal(true, check_digit_10_is_valid(["0","3","0","6","4","0","6","1","5","2"]))
+	assert_equal(false, check_digit_10_is_valid([1,2,4,6,7,8,9,0,9,9]))
+	assert_equal(true, check_digit_10_is_valid([0,3,2,1,1,4,6,5,3,0]))
 	end
 	
  def test_for_everything_so_far
@@ -47,4 +47,17 @@ def test_for_x
 	assert_equal(true, check_digit_contains_X("080442957X"))
 	end
 
+	
+def test_for_check_digit_13
+	assert_equal(true, check_digit_13_is_valid("9780470059029"))
+	assert_equal(false, check_digit_13_is_valid("9780470009029"))
+	end
+
+
+	
+	
+	
+	
+	
+	
 end
