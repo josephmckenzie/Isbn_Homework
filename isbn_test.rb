@@ -9,7 +9,8 @@ def test_for_valid_amount_of_digits
 	assert_equal(true,verify_length("2471958697"))
 	assert_equal(false,verify_length("10293847570"))
 	assert_equal(true,verify_length("0-321-14653-0"))
-	end
+end
+
 
 def test_removes_dashes_from_isbn
 	assert_equal("0321146530",remove_dashes_from_isbn("0-321-14653-0"))
@@ -27,21 +28,24 @@ def test_for_check_digit
 	assert_equal(true, check_digit_is_valid(["0","3","0","6","4","0","6","1","5","2"]))
 	assert_equal(false, check_digit_is_valid([1,2,4,6,7,8,9,0,9,9]))
 	assert_equal(true, check_digit_is_valid([0,3,2,1,1,4,6,5,3,0]))
-		
 	end
 	
- def test_for_everything
+ def test_for_everything_so_far
    results=isbn_checker("1231231231")
    results2=isbn_checker("0-321@14653-0") 	
+   results5=isbn_checker("2334567")	
 	assert_equal(false,results)
 	 assert_equal(false,results2)
+	 assert_equal(false, results5)
    results3=isbn_checker("0471958697")
    results4=isbn_checker("0-321-14653-0")  
 	 assert_equal(true,results3)
 	 assert_equal(true,results4)
-	 
-   
-   end
+	end
+
+def test_for_x_at_end_of_isbn
+	assert_equal(true,Isbn_contains_x("877195869x"))
+	end	
 
 
 
