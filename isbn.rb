@@ -43,6 +43,17 @@ def isbn_number_array(isbn_number)
 	isbn_number_array=isbn_number.split(//,)
 	end
 
+	
+def check_digit_contains_X(isbn)
+isbn_number = isbn.split ""
+
+	if isbn_number[9] == "x" || isbn_number[9] == "X"
+	isbn_number[9] = 10
+	end
+	
+isbn_number[9] == 10
+check_digit_is_valid(isbn_number)
+end
 
 	
 def check_digit_is_valid(isbn)
