@@ -43,10 +43,8 @@ def test_for_check_digit
 	 assert_equal(true,results4)
 	end
 
-def test_for_x_at_end_of_isbn
-	assert_equal(true,Isbn_contains_x("877195869x"))
-	end	
-
-
+def test_for_x
+	assert_equal(true, check_digit_contains_X("080442957X"))
+	end
 
 end

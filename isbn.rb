@@ -43,10 +43,12 @@ def isbn_number_array(isbn_number)
 	isbn_number_array=isbn_number.split(//,)
 	end
 
-def check_digit_is_valid(isbn_number)
+
+	
+def check_digit_is_valid(isbn)
 array =[]
 
-	isbn_number.each do |value|
+	isbn.each do |value|
 	array << value.to_i 
 	end
 	
@@ -55,7 +57,7 @@ sum = 0
 
 	array.each.with_index do |value, index|
 	break if index == 9
-	sum += (value * (index + 1)) 
+	sum += value * (index + 1)
 	end
 
 check_digit = sum%11
