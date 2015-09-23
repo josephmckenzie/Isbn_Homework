@@ -1,8 +1,12 @@
 def isbn_checker(isbn_number)
-#You want to call the dash remover function before verifying the length so it only counts numbers not dashes
-remove_dashes_from_isbn
-#verifies the length after removing the dashes from the isbn number
-verify_length
+no_spaces_isbn = remove_spaces_from_isbn(isbn_number)
+no_dashes_isbn = remove_dashes_from_isbn(no_spaces_isbn)
+if verify_length(no_dashes_isbn) == true 
+	isbn_array=isbn_number_array(isbn_number)
+	check_digit_is_valid(isbn_array)
+else 
+	false
+end
 end
 
 #this function verifies if the length of the isbn is a correct length of either 10 or 13
@@ -17,20 +21,50 @@ def verify_length(isbn_number)
   end
 end
 
-
 #function for removing dashes from the isbn number 
 def remove_dashes_from_isbn(isbn_number)
   if isbn_number.include?"-"
 	 isbn_number.delete!"-"
-  end
-  end
-
+	 
+else isbn_number
+	  end
+	  end
+  
 #function for removing spaces from isbn number
 def remove_spaces_from_isbn(isbn_number)
   if isbn_number.include?" "
      isbn_number.delete!" " 
-	 end
-	 end
-	 
-  
-  
+	 else isbn_number	
+	end
+	end
+	
+
+def isbn_number_array(isbn_number)
+	isbn_number_array=isbn_number.split(//,)
+	end
+
+def check_digit_is_valid(isbn_number)
+array =[]
+
+	isbn_number.each do |value|
+	array << value.to_i 
+	end
+	
+
+sum = 0
+
+	array.each.with_index do |value, index|
+	break if index == 9
+	sum += (value * (index + 1)) 
+	end
+
+check_digit = sum%11
+
+	if check_digit == array[9]
+	true
+	else
+	false
+	end
+	
+check_digit == array[9]
+end
