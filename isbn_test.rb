@@ -49,8 +49,8 @@ def test_for_x
 
 	
 def test_for_check_digit_13
-	assert_equal(true, check_digit_13_is_valid("9780470059029"))
-	assert_equal(false, check_digit_13_is_valid("9780470009029"))
+	assert_equal(true, check_digit_valid_13("9780470059029"))
+	assert_equal(false, check_digit_valid_13("9780470009029"))
 	end
 
 

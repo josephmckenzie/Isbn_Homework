@@ -38,12 +38,12 @@ def remove_spaces_from_isbn(isbn_number)
 	end
 	end
 	
-
+#splits the array up into indivual elements 
 def isbn_number_array(isbn_number)
 	isbn_number_array=isbn_number.split(//,)
 	end
 
-	
+#checks to see if the isbn has a x in it or not 	
 def check_digit_contains_X(isbn)
 isbn_number = isbn.split ""
 
@@ -52,7 +52,6 @@ isbn_number = isbn.split ""
 	end
 	
 isbn_number[9] == 10
-check_digit_10_is_valid(isbn_number)
 end
 
 	
@@ -80,4 +79,34 @@ check_digit = sum%11
 	end
 	
 check_digit == array[9]
+end
+
+def check_digit_valid_13(isbn)
+isbn_number = isbn.split ""
+array =[]
+
+	isbn_number.each do |value|
+	array << value.to_i 
+	end
+	
+sum = 0
+check_digit = 0
+	
+        array.each_with_index do |value, index|
+            break if index == 12
+			if index % 2 == 0
+            sum += value * 1
+            else
+            sum += value * 3
+			end 
+			end
+	sum = sum % 10
+    check_digit = (10 - sum)
+	
+		if check_digit == 10
+		check_digit = 0
+		end
+		
+
+array[12] == check_digit
 end
