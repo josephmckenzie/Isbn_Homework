@@ -1,15 +1,15 @@
-# def isbn_checker(isbn_number)
-# no_spaces_isbn = remove_spaces_from_isbn(isbn_number)
-# no_dashes_isbn = remove_dashes_from_isbn(no_spaces_isbn)
-# if verify_length(no_dashes_isbn) == true 
-# isbn_array=isbn_number_array(isbn_number)
-# check_digit_contains_X(isbn_number)
-# check_digit_10_is_valid(isbn_array)
-# check_digit_valid_13(isbn_number)
-# else 
-# false
-# end
-# end
+def isbn_checker(isbn_number)
+no_spaces_isbn = remove_spaces_from_isbn(isbn_number)
+no_dashes_isbn = remove_dashes_from_isbn(no_spaces_isbn)
+if verify_length(no_dashes_isbn) == true 
+isbn_array=isbn_number_array(isbn_number)
+check_digit_contains_X(isbn_number)
+check_digit_10_is_valid(isbn_array)
+check_digit_valid_13(isbn_number)
+else 
+false
+end
+end
 
 
 

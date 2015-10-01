@@ -31,16 +31,16 @@ def test_for_check_digit_10
 	
 	end
  
- # def test_for_everything_so_far
-   # results=isbn_checker("1231231231")
-   # results2=isbn_checker("0-321@14653-0") 	
-   # results5=isbn_checker("2334567")	
-	# assert_equal(false,results)
-	 # assert_equal(false,results2)
-	 # assert_equal(false, results5)
-      # results4=isbn_checker("0321146530")  
-	 	 # assert_equal(true,results4)
-	# end
+ def test_for_everything_so_far
+   results=isbn_checker("1231231231")
+   results2=isbn_checker("0-321@14653-0") 	
+   results5=isbn_checker("2334567")	
+	assert_equal(false,results)
+	 assert_equal(false,results2)
+	 assert_equal(false, results5)
+      results4=isbn_checker("0321146530")  
+	 	 assert_equal(true,results4)
+	end
 
 def test_for_x
 	assert_equal(true, check_digit_contains_X("080442957X"))
